@@ -18,6 +18,8 @@ class Country {
 
   final String currencyISO;
 
+  final String currencySymbol;
+
   /// Instantiates a [Country] with the specified [asset], [dialingCode] and [isoCode]
   const Country({
     @required this.asset,
@@ -25,6 +27,7 @@ class Country {
     @required this.isoCode,
     @required this.currency,
     @required this.currencyISO,
+    @required this.currencySymbol,
     this.name = "",
   });
 
@@ -36,7 +39,8 @@ class Country {
       o.asset == this.asset &&
       o.name == this.name && 
       o.currency == this.currency &&
-      o.currencyISO == this.currencyISO;
+      o.currencyISO == this.currencyISO &&
+      o.currencySymbol == this.currencySymbol;
 
   int get hashCode {
     int hash = 7;
@@ -46,6 +50,7 @@ class Country {
     hash = 31 * hash + this.isoCode.hashCode;
     hash = 31 * hash + this.currency.hashCode;
     hash = 31 * hash + this.currencyISO.hashCode;
+    hash = 31 * hash + this.currencySymbol.hashCode;
     return hash;
   }
 
@@ -56,6 +61,7 @@ class Country {
     name: "Andorra",
     currency: "Euro",
     currencyISO: "EUR",
+    currencySymbol: "€"
   );
   static const Country AE = Country(
     asset: "assets/flags/ae_flag.png",
